@@ -4,15 +4,17 @@ import Style from "../Common/Style";
 import BRSBCarousel from '../Common/BRSBCarousel';
 import { withSelect } from '@wordpress/data';
 import ClipBoard from '../../shortcode/clipBoard';
+import { useState } from 'react';
 const Edit = (props) => {
   const { attributes, setAttributes, clientId, device, postType, postId, } = props;
   const isPremium = brsbIsPipeChecker
 
-
+  const [activeSlideIdx, setActiveSlideIdx] = useState(0)
+  const activeSlideProps = { activeSlideIdx, setActiveSlideIdx }
 
   return (
     <>
-      <Settings {...{ attributes, setAttributes, device, isPremium, clientId }} />
+      <Settings {...{ attributes, setAttributes, device, isPremium, clientId, ...activeSlideProps }} />
 
       <div {...useBlockProps({
         draggable: false
@@ -23,7 +25,7 @@ const Edit = (props) => {
             shortcode={`[brsb_reactify_slider id=${postId}]`}
           />
         )}
-        <BRSBCarousel attributes={attributes} isPremium={isPremium} isEditor={true} />
+        <BRSBCarousel attributes={attributes} isPremium={isPremium} isEditor={true} setAttributes={setAttributes} activeSlideProps={activeSlideProps} />
 
       </div>
     </>

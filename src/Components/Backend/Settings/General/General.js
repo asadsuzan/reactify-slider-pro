@@ -14,10 +14,10 @@ import { BControlPro } from '../../../../../../bpl-tools/ProControls';
 import { themeOptions } from '../../../../utils/options';
 import { themeSwitch } from '../../../../utils/functions';
 
-const General = ({ attributes, setAttributes, device, isPremium, setIsProModalOpen }) => {
+const General = ({ attributes, setAttributes, device, isPremium, setIsProModalOpen, activeSlideIdx }) => {
   const { responsive, sliderSettings, theme } = attributes;
   const premiumProps = { isPremium, setIsProModalOpen };
-  console.log(theme);
+
   return (
     <>
       {/* 🎞 Slides Section */}
@@ -37,14 +37,14 @@ const General = ({ attributes, setAttributes, device, isPremium, setIsProModalOp
         <ItemsPanel
           {...{ attributes, setAttributes }}
           arrKey="sliderItems"
-          activeIndex={0}
+          activeIndex={activeSlideIdx}
           newItem={{
             title: 'Creative Web Design',
             desc: 'Transform your ideas into stunning websites with modern design principles.',
             img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800',
           }}
           ItemSettings={sliderItemsPanel}
-          design="sortable"
+          design="single"
           title="title"
           itemLabel="Slide"
         />

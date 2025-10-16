@@ -14,12 +14,12 @@ import { useState } from 'react';
 import { compose } from '@wordpress/compose';
 import { withSelect } from '@wordpress/data';
 import { BplBlockPreview } from '../../../../../bpl-tools/Components';
-const Settings = ({ attributes, setAttributes, device, isPremium, siteUrl, clientId }) => {
+const Settings = ({ attributes, setAttributes, device, isPremium, siteUrl, clientId, activeSlideIdx }) => {
   const { alignment, theme } = attributes;
 
   const [isProModalOpen, setIsProModalOpen] = useState(false);
   const siteLocation = `${siteUrl}/wp-admin/edit.php?post_type=brsb_reactify_slider&page=demo_page#/pricing`;
-  console.log(siteUrl);
+
   return (
     <>
       <InspectorControls>
@@ -50,6 +50,8 @@ const Settings = ({ attributes, setAttributes, device, isPremium, siteUrl, clien
 
                   isPremium={isPremium}
                   setIsProModalOpen={setIsProModalOpen}
+                  activeSlideIdx={activeSlideIdx}
+
 
                 />
               )}

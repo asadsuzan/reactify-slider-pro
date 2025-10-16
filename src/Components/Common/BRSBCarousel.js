@@ -16,8 +16,10 @@ const CustomRightArrow = ({ onClick }) => (
   </button>
 );
 
-const BRSBCarousel = ({ attributes, isPremium = false, isEditor = true }) => {
+const BRSBCarousel = ({ attributes, isPremium = false, isEditor = true, activeSlideProps }) => {
   const { sliderItems = [], responsive = {}, sliderSettings = {}, theme = "default" } = attributes || {};
+
+
 
   const isPremiumTheme = theme !== "default"
   const isShowPremiumOverlay = !isPremium && isPremiumTheme && !isEditor
@@ -50,7 +52,7 @@ const BRSBCarousel = ({ attributes, isPremium = false, isEditor = true }) => {
           dotListClass="custom-dot-list"
         >
           {sliderItems?.map((item, index) => (
-            <Card key={index} item={item} theme={theme} />
+            <Card key={index} item={item} theme={theme} activeSlideProps={activeSlideProps} idx={index} />
           ))}
         </Carousel>
       </div>

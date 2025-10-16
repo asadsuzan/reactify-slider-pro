@@ -1,5 +1,7 @@
 
-const Card = ({item,theme}) => {
+const Card = ({item,theme,activeSlideProps={},idx}) => {
+
+  const {activeSlideIdx=0,setActiveSlideIdx=()=>{}} = activeSlideProps
 
   const isVertical  =  theme === "vertical"
     const verticalStyle ={
@@ -8,8 +10,13 @@ const Card = ({item,theme}) => {
         height:isVertical? "300px":"auto"
     }
 
+
+    const setActiveSlide = (sliderIdx)=>{
+      setActiveSlideIdx(sliderIdx)
+    }
+
   return (
-      <div  className="card" style={verticalStyle}>
+      <div  className="card" style={verticalStyle} onClick={()=>setActiveSlide(idx)}>
               <div className="card-image">
                 <img src={item.img} alt={item.title} />
               </div>
