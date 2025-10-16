@@ -1,0 +1,236 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "b-reactify/slider",
+  "version": "1.0.0",
+  "title": "Reactify Carousel",
+  "category": "common",
+  "description": "A powerful responsive carousel block built with React Multi Carousel.",
+  "keywords": ["carousel", "slider", "reactify", "react"],
+  "textdomain": "b-reactify",
+
+  "attributes": {
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+
+    "theme": {
+      "type": "string",
+      "default": "default"
+    },
+
+    "purposeType": {
+      "type": "string",
+      "default": "default"
+    },
+
+    "colors": {
+      "type": "object",
+      "default": {
+        "text": "#dedee0",
+        "bg": "#00283a",
+        "accent": "#004e75"
+      }
+    },
+
+    "sliderSettings": {
+      "type": "object",
+      "default": {
+        "infinite": false,
+        "autoPlay": false,
+        "autoPlaySpeed": 2500,
+        "showDots": true,
+        "showArrows": true,
+        "keyBoardControl": true
+      }
+    },
+
+    "responsive": {
+      "type": "object",
+      "default": {
+        "superLargeDesktop": {
+          "breakpoint": { "max": 4000, "min": 3000 },
+          "items": 5
+        },
+        "desktop": { "breakpoint": { "max": 3000, "min": 1024 }, "items": 3 },
+        "tablet": { "breakpoint": { "max": 1024, "min": 640 }, "items": 2 },
+        "mobile": { "breakpoint": { "max": 640, "min": 0 }, "items": 1 }
+      }
+    },
+
+    "sliderItems": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Creative Web Design",
+          "desc": "Transform your ideas into stunning websites with modern design principles.",
+          "img": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800"
+        },
+        {
+          "title": "Full Stack Development",
+          "desc": "Build scalable apps powered by MERN stack and cloud technologies.",
+          "img": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"
+        },
+        {
+          "title": "Performance Optimization",
+          "desc": "Boost speed and SEO rankings with cutting-edge optimization techniques.",
+          "img": "https://images.unsplash.com/photo-1506765515384-028b60a970df?w=800"
+        },
+        {
+          "title": "API Integration",
+          "desc": "Seamlessly connect third-party APIs to supercharge functionality.",
+          "img": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800"
+        }
+      ]
+    },
+    "styles": {
+      "type": "object",
+      "default": {
+        "container": {
+          "bg": {
+            "color": "#00283a"
+          },
+          "padding": {
+            "desktop": {
+              "top": "48px",
+              "right": "16px",
+              "bottom": "48px",
+              "left": "16px"
+            },
+            "tablet": {
+              "top": "32px",
+              "right": "24px",
+              "bottom": "32px",
+              "left": "24px"
+            },
+            "mobile": {
+              "top": "24px",
+              "right": "16px",
+              "bottom": "24px",
+              "left": "16px"
+            }
+          },
+          "radius": {
+            "top": "10px",
+            "right": "10px",
+            "bottom": "10px",
+            "left": "10px"
+          }
+        },
+        "heading": {
+          "typo": {
+            "fontSize": {
+              "desktop": "1.875rem",
+              "tablet": "1.4rem",
+              "mobile": "1.4rem"
+            },
+            "fontWeight": 700,
+            "lineHeight": "1.6rem",
+            "letterSpacing": "normal"
+          },
+          "align": "center",
+          "color": "#dedee0"
+        },
+        "card": {
+          "bg": {
+            "color": "#00283a"
+          },
+          "border": {
+            "width": "1px",
+            "style": "solid",
+            "color": "#004e754d",
+            "radius": "16px",
+            "side": "all"
+          },
+          "shadow": [
+            {
+              "hOffset": "0px",
+              "vOffset": "0px",
+              "blur": "10px",
+              "spread": "0px",
+              "color": "rgba(0, 0, 0, 0.2)",
+              "isInset": false
+            }
+          ],
+          "hoverShadow": [
+            {
+              "hOffset": "0px",
+              "vOffset": "0px",
+              "blur": "20px",
+              "spread": "0px",
+              "color": "rgba(0, 0, 0, 0.4)",
+              "isInset": false
+            }
+          ],
+          "img": {
+            "height": "100%",
+            "width": "100%"
+          },
+          "title": {
+            "typo": {
+              "fontSize": {
+                "desktop": "1.25rem",
+                "tablet": "1rem",
+                "mobile": "1rem"
+              },
+              "fontWeight": 600,
+              "lineHeight": "1.6rem",
+              "letterSpacing": "normal"
+            },
+            "color": "#c9c9c9"
+          },
+          "desc": {
+            "typo": {
+              "fontSize": {
+                "desktop": "1rem",
+                "tablet": "0.8rem",
+                "mobile": "0.8rem"
+              },
+              "fontWeight": 400,
+              "lineHeight": "1.6rem",
+              "letterSpacing": "normal"
+            },
+            "color": "#c9c9c9"
+          }
+        }
+      }
+    }
+  },
+
+  "supports": {
+    "align": ["wide", "full"],
+    "html": false,
+    "color": {
+      "text": true,
+      "background": true,
+      "gradients": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+
+  "example": {
+    "attributes": {
+      "sliderItems": [
+        {
+          "title": "Frontend Excellence",
+          "desc": "Build blazing-fast UIs using React, Next.js, and TailwindCSS.",
+          "img": "https://images.unsplash.com/photo-1505685296765-3a2736de412f?w=800"
+        }
+      ]
+    }
+  },
+
+  "editorScript": ["file:./index.js"],
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}
